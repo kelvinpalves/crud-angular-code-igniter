@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cliente extends CI_Controller {
 
 	public function atualizar() {
-		$cliente = json_decode($this->input->raw_input_stream);
+		$data = $this->security->xss_clean($this->input->raw_input_stream);
+		$cliente = json_decode($data);
 		$response = array('exec' => $this->ClienteModel->atualizar($cliente->id, $cliente));
 		print_r(json_encode($response));
 	}
@@ -23,7 +24,8 @@ class Cliente extends CI_Controller {
 	}
 
 	public function salvar() {
-		$cliente = json_decode($this->input->raw_input_stream);
+		$data = $this->security->xss_clean($this->input->raw_input_stream);
+		$cliente = json_decode($data);
 		$response = array('exec' => $this->ClienteModel->inserir($cliente));
 		print_r(json_encode($response));
 	}
