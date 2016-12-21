@@ -4,6 +4,7 @@
 	<title>CRUD AngularJS e CodeIgniter</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.min.css">
 </head>
 <body>
 	<div class="container" style="padding: 10px;" ng-view></div>
@@ -11,14 +12,13 @@
 	<!-- vendor -->
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/toastr/toastr.min.js"></script>
 
 	<!-- app -->
 	<script type="text/javascript" src="src/app/app.module.js"></script>
+	<script type="text/javascript" src="src/app/core/app.constants.js"></script>
 	<script type="text/javascript" src="src/app/core/config.route.js"></script>
-
-	<!-- home -->
-	<script type="text/javascript" src="src/app/home/home.module.js"></script>
-	<script type="text/javascript" src="src/app/home/home.js"></script>
 
 	<!-- cliente -->
 	<script type="text/javascript" src="src/app/cliente/cliente.module.js"></script>

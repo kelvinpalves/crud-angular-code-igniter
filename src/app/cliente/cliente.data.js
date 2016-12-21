@@ -11,7 +11,8 @@
 	function dataservice($http, $location, $q) {
 		var service = {
 			buscar: buscar,
-			buscarTodos: buscarTodos
+			buscarTodos: buscarTodos,
+			salvar: salvar
 		};	
 
 		return service;
@@ -22,6 +23,10 @@
 
 		function buscarTodos() {
 			return $http.get('http://localhost/crud-angular-code-igniter/server/cliente');
+		}
+
+		function salvar(data) {
+			return $http.post('http://localhost/crud-angular-code-igniter/server/cliente/salvar', data);
 		}
 	}
 })();

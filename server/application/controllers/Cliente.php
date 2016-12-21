@@ -21,6 +21,8 @@ class Cliente extends CI_Controller {
 	}
 
 	public function salvar() {
-		print 'Salvar';
+		$cliente = json_decode($this->input->raw_input_stream);
+		$response = array('exec' => $this->ClienteModel->inserir($cliente));
+		print_r(json_encode($response));
 	}
 }
