@@ -1,0 +1,18 @@
+{
+	"js": [
+		"./src/app/**/*.js"
+	],
+	"app": {
+		"js": "./build/app.min.js"
+	},
+	"uglify": [
+		"./src/app/app.module.js",
+		"./src/app/core/app.constants.js",
+		"./src/app/core/config.route.js",
+		"./src/app/cliente/cliente.module.js",
+		"./src/app/cliente/config.route.js",
+		"./src/app/cliente/cliente.data.js",
+		"./src/app/cliente/cliente.js"
+	],
+	"build": "./build"
+}
