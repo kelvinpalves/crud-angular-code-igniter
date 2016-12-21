@@ -17,13 +17,13 @@
 		vm.cliente = {};
 		vm.clientes = [];
 		vm.editar = false;
+		vm.excluir = excluir;
 		vm.salvar = salvar;
 
 		init();
 		///////
 
 		function atualizar(cliente) {
-			console.log(cliente);
 			return dataservice.atualizar(cliente).then(success).catch(error);
 
 			function error(response) {
@@ -33,6 +33,7 @@
 			function success(response) {
 				if (response.data.exec) {
 					buscarTodos();
+					vm.editar = false;
 					toastr.success('Sucesso ao atualizar o cliente', 'SUCESSO');
 				} else {
 					toastr.error('Erro ao atualizar o cliente', 'ERRO');
@@ -44,7 +45,7 @@
 			return dataservice.buscar(id).then(success).catch(error);
 
 			function error(response) {
-				console.log('Error:' + response);
+				toastr.error('Erro ao carregar o cliente', 'ERRO');
 			}
 
 			function success(response) {
@@ -57,7 +58,7 @@
 			return dataservice.buscarTodos().then(success).catch(error);
 
 			function error(response) {
-				console.log('Error:' + response);
+				toastr.error('Erro ao carregar os clientes', 'ERRO');
 			}
 
 			function success(response) {
@@ -65,7 +66,7 @@
 					vm.clientes = response.data;	
 					vm.cliente = {};
 				} else {
-					console.log(vm.clientes);
+					vm.clientes = [];
 				}
 			}	
 		}
@@ -73,6 +74,23 @@
 		function cancelar() {
 			vm.cliente = {};
 			vm.editar = false;
+		}
+
+		function excluir(id) {
+			return dataservice.excluir(id).then(success).catch(error);
+
+			function error(response) {
+				toastr.error('Erro ao excluir o cliente', 'ERRO');
+			}
+
+			function success(response) {
+				if (response.data.exec) {
+					buscarTodos();
+					toastr.success('Sucesso ao excluir o cliente', 'SUCESSO');
+				} else {
+					toastr.error('Erro ao excluir o cliente', 'ERRO');
+				}
+			}
 		}
 
 		function init() {

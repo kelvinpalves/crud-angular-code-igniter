@@ -15,11 +15,11 @@ class Cliente extends CI_Controller {
 
 	public function buscarTodos() {
 		print_r(json_encode($this->ClienteModel->buscarTodos()));
-
 	}
 
-	public function remover() {
-
+	public function excluir() {
+		$response = array('exec' => $this->ClienteModel->excluir($this->uri->segment(3)));
+		print_r(json_encode($response));
 	}
 
 	public function salvar() {
