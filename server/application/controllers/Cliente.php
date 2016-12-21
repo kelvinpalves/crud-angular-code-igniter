@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cliente extends CI_Controller {
 
 	public function atualizar() {
-
+		$cliente = json_decode($this->input->raw_input_stream);
+		$response = array('exec' => $this->ClienteModel->atualizar($cliente->id, $cliente));
+		print_r(json_encode($response));
 	}
 
 	public function buscar() {

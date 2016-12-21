@@ -55,4 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['cliente'] = 'cliente/buscarTodos';
 $route['cliente/(:num)'] = 'cliente/buscar/$1';
+$route['cliente/atualizar'] = 'cliente/atualizar';
 $route['cliente/salvar'] = 'cliente/salvar';

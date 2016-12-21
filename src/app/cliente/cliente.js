@@ -11,6 +11,7 @@
 	function Cliente(dataservice) {
 		var vm = this;
 
+		vm.atualizar = atualizar;
 		vm.buscar = buscar;
 		vm.cancelar = cancelar;
 		vm.cliente = {};
@@ -20,6 +21,24 @@
 
 		init();
 		///////
+
+		function atualizar(cliente) {
+			console.log(cliente);
+			return dataservice.atualizar(cliente).then(success).catch(error);
+
+			function error(response) {
+				toastr.error('Erro ao atualizar o cliente', 'ERRO');
+			}
+
+			function success(response) {
+				if (response.data.exec) {
+					buscarTodos();
+					toastr.success('Sucesso ao atualizar o cliente', 'SUCESSO');
+				} else {
+					toastr.error('Erro ao atualizar o cliente', 'ERRO');
+				}
+			}	
+		}
 
 		function buscar(id) {
 			return dataservice.buscar(id).then(success).catch(error);
