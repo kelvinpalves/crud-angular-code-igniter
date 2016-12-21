@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 
 gulp.task('analisarCodigo', analisarCodigo);
 gulp.task('removerArquivos', removerArquivos);
-gulp.task('uglifyJs', uglifyJs);
+gulp.task('uglifyJs', ['removerArquivos'], uglifyJs);
 
 function analisarCodigo() {
 	gulp.src(paths.js)
@@ -21,7 +21,6 @@ function removerArquivos() {
 }
 
 function uglifyJs() {
-	removerArquivos();
 	gulp.src([].concat(paths.uglify))
 		.pipe(concat('app.min.js'))
 		.pipe(uglify())

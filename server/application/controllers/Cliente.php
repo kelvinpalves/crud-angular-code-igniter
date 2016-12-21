@@ -29,4 +29,5 @@ class Cliente extends CI_Controller {
 		$response = array('exec' => $this->ClienteModel->inserir($cliente));
 		print_r(json_encode($response));
 	}
+	
 }
