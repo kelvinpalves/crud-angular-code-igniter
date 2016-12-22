@@ -3,7 +3,8 @@
 		"./src/app/**/*.js"
 	],
 	"app": {
-		"js": "./build/app.min.js"
+		"js": "app.min.js",
+		"css": "app.min.css"
 	},
 	"uglify": [
 		"./src/app/app.module.js",
@@ -13,6 +14,11 @@
 		"./src/app/cliente/config.route.js",
 		"./src/app/cliente/cliente.data.js",
 		"./src/app/cliente/cliente.js"
+	],
+	"minify": [
+		"./bower_components/bootstrap/dist/css/bootstrap.css",
+		"./bower_components/toastr/toastr.css",
+		"./src/app/layout/style.css"
 	],
 	"build": "./build"
 }
