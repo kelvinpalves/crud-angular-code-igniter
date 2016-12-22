@@ -7,6 +7,7 @@ var rev = require('gulp-rev');
 var uglify = require('gulp-uglify');
 
 gulp.task('analisarCodigo', analisarCodigo);
+gulp.task('default', padrao);
 gulp.task('removerArquivos', removerArquivos);
 gulp.task('uglifyJs', ['removerArquivos'], uglifyJs);
 
@@ -26,4 +27,11 @@ function uglifyJs() {
 		.pipe(uglify())
 		.pipe(rev())
 		.pipe(gulp.dest(paths.build));
+}
+
+function padrao() {
+	gulp.start('uglifyJs');
+	gulp.watch(paths.js, function (evt) {
+		gulp.start('uglifyJs');
+	});
 }
