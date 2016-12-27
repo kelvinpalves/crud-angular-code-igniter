@@ -3,14 +3,31 @@
 <head>
 	<title>CRUD AngularJS e CodeIgniter</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="build/app-90095b74ba.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/angular-datatables/dist/css/angular-datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="build/app-f482349927.min.css">
 </head>
 <body>
 	<div class="container" style="padding: 10px;" ng-view></div>
+
+	<!-- vendor -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="vendor/datatables.net/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="vendor/angular-datatables/dist/angular-datatables.js"></script>
+	<script type="text/javascript" src="vendor/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
 	<script type="text/javascript" src="bower_components/toastr/toastr.min.js"></script>
-	<script type="text/javascript" src="build/app-2d23b27a40.min.js"></script>
+	<!-- final vendor -->
+
+	<script type="text/javascript" src="src/app/app.module.js"></script>
+	<script type="text/javascript" src="src/app/core/config.route.js"></script>
+	<script type="text/javascript" src="src/app/core/app.constants.js"></script>
+	<script type="text/javascript" src="src/app/cliente/cliente.module.js"></script>
+	<script type="text/javascript" src="src/app/cliente/cliente.data.js"></script>
+	<script type="text/javascript" src="src/app/cliente/cliente.js"></script>
+
 </body>
 </html>

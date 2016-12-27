@@ -16,8 +16,6 @@
 		"./src/app/cliente/cliente.js"
 	],
 	"minify": [
-		"./bower_components/bootstrap/dist/css/bootstrap.css",
-		"./bower_components/toastr/toastr.css",
 		"./src/app/layout/style.css"
 	],
 	"build": "./build"
